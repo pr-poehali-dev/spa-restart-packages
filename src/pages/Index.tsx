@@ -7,92 +7,94 @@ const ROOM_IMG = "https://cdn.poehali.dev/projects/7a8eee21-12aa-4bc3-8336-361ba
 
 const programs = [
   {
-    title: "Детокс",
-    duration: "5 дней",
-    desc: "Полное очищение организма: авторские процедуры, детокс-питание и медитации на рассвете.",
-    price: "от 42 000 ₽",
-    icon: "Leaf",
-  },
-  {
-    title: "Антистресс",
-    duration: "3 дня",
-    desc: "Глубокое расслабление через телесные практики, флоатинг и сеансы с психологом.",
-    price: "от 28 000 ₽",
+    title: "СПА-перезагрузка: антистресс",
+    duration: "3–4 ночи",
+    desc: "Программа для гостей 30–40 лет. Жемчужные ванны, кедровая бочка, галокамера, магнитотерапия и подводный душ-массаж. Включает консультацию специалиста и скидку 1 900 ₽ в спа-салоне SEA SPA.",
+    price: "3–4 ночи",
     icon: "Wind",
   },
   {
-    title: "Восстановление",
-    duration: "7 дней",
-    desc: "Комплексная программа для возвращения жизненных сил: бальнеология, кинезиотерапия, нутрициология.",
-    price: "от 68 000 ₽",
+    title: "СПА-перезагрузка: восстановление",
+    duration: "7 ночей",
+    desc: "Программа для гостей 55–65 лет. Жемчужные ванны, барокамера, галокамера, магнитотерапия, механотерапия, подводный душ-массаж и уход за кожей лица. Скидка 1 900 ₽ в SEA SPA.",
+    price: "7 ночей",
     icon: "Heart",
-  },
-  {
-    title: "Молчание",
-    duration: "10 дней",
-    desc: "Цифровой детокс и практики тишины. Медитации, йога, работа с телом в полном уединении.",
-    price: "от 85 000 ₽",
-    icon: "Mountain",
   },
 ];
 
 const packages = [
   {
-    name: "Стандарт",
-    label: "",
-    price: "14 900 ₽",
-    period: "/ ночь",
-    features: ["Номер Делюкс с видом на лес", "Завтрак в формате wellness", "Посещение СПА-зоны", "2 групповых занятия в день"],
+    name: "СПА-перезагрузка: антистресс",
+    label: "30–40 лет",
+    price: "3–4 ночи",
+    period: "",
+    features: [
+      "Проживание в номере выбранной категории",
+      "Завтраки — шведский стол",
+      "Консультация специалиста",
+      "Жемчужные ванны × 3",
+      "Кедровая бочка × 2",
+      "Галокамера × 1 (40 мин)",
+      "Магнитотерапия «Мультимаг» × 1",
+      "Подводный душ-массаж × 1",
+      "Доступ к бассейну и тренажёрному залу",
+      "Скидка 1 900 ₽ в SEA SPA",
+    ],
     highlight: false,
   },
   {
-    name: "Премиум",
-    label: "Популярный",
-    price: "24 900 ₽",
-    period: "/ ночь",
-    features: ["Сюит с террасой и ванной", "Полный пансион wellness", "Безлимитный СПА", "4 персональные процедуры", "Личный велнес-куратор"],
+    name: "СПА-перезагрузка: восстановление",
+    label: "55–65 лет",
+    price: "7 ночей",
+    period: "",
+    features: [
+      "Проживание в номере выбранной категории",
+      "Завтраки — шведский стол",
+      "Консультация специалиста",
+      "Жемчужные ванны × 5",
+      "Барокамера (оксигенация) × 3",
+      "Галокамера × 5",
+      "Магнитотерапия «Мультимаг» × 4",
+      "Механотерапия «Сераджем» × 4",
+      "Подводный душ-массаж × 3",
+      "Уход за кожей лица × 2",
+      "Доступ к бассейну и тренажёрному залу",
+      "Скидка 1 900 ₽ в SEA SPA",
+    ],
     highlight: true,
-  },
-  {
-    name: "Вилла",
-    label: "",
-    price: "48 900 ₽",
-    period: "/ ночь",
-    features: ["Отдельная вилла 180 м²", "Персональный шеф-повар", "Частный СПА-бассейн", "Неограниченные процедуры", "Консьерж 24/7"],
-    highlight: false,
   },
 ];
 
 const infrastructure = [
-  { icon: "Waves", title: "Термальные бассейны", desc: "4 бассейна с природными минеральными водами" },
-  { icon: "Flame", title: "Банный комплекс", desc: "Русская, финская, хамам — 8 видов бань" },
-  { icon: "Dumbbell", title: "Фитнес-студия", desc: "Оборудование Technogym, зал для йоги и пилатеса" },
-  { icon: "Utensils", title: "Ресторан Sílva", desc: "Авторская wellness-кухня с локальными продуктами" },
-  { icon: "TreePine", title: "Экотропы", desc: "12 км терренкурных маршрутов в реликтовом лесу" },
-  { icon: "Moon", title: "Медитационный сад", desc: "Пространство для практик и созерцания" },
+  { icon: "Waves", title: "Аквазона", desc: "Бассейн с морской водой и гидромассажем на берегу Чёрного моря" },
+  { icon: "Sparkles", title: "СПА-центр SEA SPA", desc: "Полный спектр оздоровительных и косметологических процедур" },
+  { icon: "Dumbbell", title: "Тренажёрный зал", desc: "Современное оборудование, групповые занятия, персональный тренер" },
+  { icon: "Wind", title: "Галокамера", desc: "Спелеотерапия — очищение дыхания и укрепление иммунитета" },
+  { icon: "Zap", title: "Кабинет физиотерапии", desc: "Магнитотерапия, барокамера, механотерапия Сераджем" },
+  { icon: "Utensils", title: "Ресторан", desc: "Завтраки «шведский стол», меню из свежих черноморских продуктов" },
 ];
 
 const reviews = [
   {
-    name: "Анна В.",
+    name: "Ольга М.",
     city: "Москва",
     rating: 5,
-    text: "Провела здесь 7 дней по программе «Восстановление». Вернулась другим человеком. Персонал невероятный, атмосфера — как в сне.",
-    program: "Восстановление",
+    text: "Взяла программу «Восстановление» на 7 ночей. Каждый день — новая процедура. Галокамера и барокамера особенно понравились. Уехала другим человеком.",
+    program: "СПА: восстановление",
   },
   {
-    name: "Михаил Т.",
-    city: "Санкт-Петербург",
+    name: "Сергей К.",
+    city: "Краснодар",
     rating: 5,
-    text: "Первый раз решился на детокс. Честно — боялся. Но с первого дня почувствовал заботу команды. Уехал лёгким и радостным.",
-    program: "Детокс",
+    text: "Приехал с женой на «Антистресс». Кедровая бочка и жемчужные ванны — это что-то невероятное. Море, горы и полный покой. Рекомендую всем!",
+    program: "СПА: антистресс",
   },
   {
-    name: "Екатерина Л.",
-    city: "Казань",
+    name: "Наталья Р.",
+    city: "Ростов-на-Дону",
     rating: 5,
-    text: "Приезжаем сюда уже третий раз. Это место стало нашим ритуалом восстановления. Природа, тишина — и ты снова живёшь.",
-    program: "Антистресс",
+    text: "Бархатные Сезоны — это настоящее место силы. Персонал внимательный, процедуры подбираются индивидуально. Уже планируем следующий визит.",
+    program: "СПА: восстановление",
   },
 ];
 
@@ -164,8 +166,8 @@ export default function Index() {
         }}
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="font-cormorant text-2xl font-light tracking-[0.15em] text-gold">
-            СИЛЬВА
+          <div className="font-cormorant text-2xl font-light tracking-[0.1em] text-gold">
+            Бархатные Сезоны
           </div>
           <div className="hidden md:flex items-center gap-8">
             {[["programs", "Программы"], ["packages", "Пакеты"], ["infra", "Инфраструктура"], ["gallery", "Галерея"], ["reviews", "Отзывы"]].map(([id, label]) => (
@@ -218,26 +220,26 @@ export default function Index() {
             className="font-golos text-sm uppercase mb-6 animate-fade-in"
             style={{ color: "#C9A96E", letterSpacing: "0.35em", animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}
           >
-            Велнес-курорт · Алтай
+            Велнес-курорт · Сириус, Черное море
           </div>
           <h1
             className="font-cormorant font-light mb-6 animate-fade-in"
             style={{
-              fontSize: "clamp(3.5rem, 9vw, 8rem)",
-              lineHeight: 0.92,
-              letterSpacing: "-0.02em",
+              fontSize: "clamp(2.8rem, 7vw, 6.5rem)",
+              lineHeight: 0.95,
+              letterSpacing: "-0.01em",
               animationDelay: "0.4s",
               opacity: 0,
               animationFillMode: "forwards",
             }}
           >
-            <span className="shimmer-text">Сильва</span>
+            <span className="shimmer-text">Бархатные Сезоны</span>
           </h1>
           <p
             className="font-cormorant italic text-xl md:text-2xl mb-10 animate-fade-in"
             style={{ color: "#EDE8DFcc", animationDelay: "0.7s", opacity: 0, animationFillMode: "forwards", fontWeight: 300 }}
           >
-            Место, где тело вспоминает покой
+            Оздоровление на берегу Чёрного моря
           </p>
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in"
@@ -576,15 +578,15 @@ export default function Index() {
       <footer className="py-12 px-6" style={{ borderTop: "1px solid rgba(201,169,110,0.15)" }}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <div className="font-cormorant text-2xl text-gold tracking-widest mb-1">СИЛЬВА</div>
-            <div className="font-golos text-xs opacity-30 uppercase tracking-widest">Велнес-курорт · Алтай</div>
+            <div className="font-cormorant text-2xl text-gold tracking-widest mb-1">Бархатные Сезоны</div>
+            <div className="font-golos text-xs opacity-30 uppercase tracking-widest">Велнес-курорт · Сириус, Черное море</div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
-            {["+7 (385) 222-00-00", "info@silva-resort.ru"].map(c => (
+            {["+7 (862) 200-00-00", "info@barkhatnye-sezony.ru"].map(c => (
               <span key={c} className="font-golos text-sm opacity-50">{c}</span>
             ))}
           </div>
-          <div className="font-golos text-xs opacity-25">© 2026 Сильва. Все права защищены.</div>
+          <div className="font-golos text-xs opacity-25">© 2026 Бархатные Сезоны. Все права защищены.</div>
         </div>
       </footer>
     </div>
