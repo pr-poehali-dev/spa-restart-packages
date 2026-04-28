@@ -29,8 +29,7 @@ const programs = [
   {
     title: "СПА-перезагрузка: антистресс",
     duration: "3–4 ночи",
-    age: "30–40 лет",
-    desc: "Жемчужные ванны, кедровая бочка, галокамера, магнитотерапия и подводный душ-массаж. Консультация специалиста и скидка 1 900 ₽ в SEA SPA.",
+    desc: "Три дня у моря, за которые тело вспоминает, что такое расслабление, а голова — тишина. Кедровая бочка снимает напряжение глубже, чем выходные на диване. Галокамера очищает дыхание, а мягкий подводный массаж возвращает лёгкость в спину и плечи. Вы уедете не просто отдохнувшей — вы уедете с энергией, которой не хватало последние месяцы.",
     icon: "Wind",
     color: C.sky,
     colorBg: C.skyPale,
@@ -38,8 +37,7 @@ const programs = [
   {
     title: "СПА-перезагрузка: восстановление",
     duration: "7 ночей",
-    age: "55–65 лет",
-    desc: "Жемчужные ванны, барокамера, галокамера, магнитотерапия, механотерапия Сераджем, подводный душ-массаж и уход за кожей лица. Скидка 1 900 ₽ в SEA SPA.",
+    desc: "Неспешная неделя у моря, где всё подчинено одному — вашему комфорту и восстановлению. Барокамера насыщает клетки кислородом, возвращая бодрость без кофеина. Курс галокамеры и магнитотерапии мягко работает с суставами и дыханием. А механотерапия и подводный массаж убирают скованность, о которой вы уже привыкли не замечать. К концу недели замечаешь: спится лучше, настроение ровнее, и сил до вечера хватает.",
     icon: "Heart",
     color: C.teal,
     colorBg: C.tealPale,
@@ -49,7 +47,7 @@ const programs = [
 const packages = [
   {
     name: "СПА-перезагрузка: антистресс",
-    label: "30–40 лет",
+    label: "",
     duration: "3–4 ночи",
     features: [
       "Проживание в номере выбранной категории",
@@ -67,7 +65,7 @@ const packages = [
   },
   {
     name: "СПА-перезагрузка: восстановление",
-    label: "55–65 лет",
+    label: "",
     duration: "7 ночей",
     features: [
       "Проживание в номере выбранной категории",
@@ -285,10 +283,7 @@ export default function Index() {
                     <div className="w-11 h-11 flex items-center justify-center rounded-full" style={{ background: C.white, border: `1px solid ${C.border}` }}>
                       <Icon name={p.icon} size={20} style={{ color: p.color }} />
                     </div>
-                    <div className="text-right">
-                      <div className="font-golos text-xs uppercase tracking-widest" style={{ color: C.stoneLight }}>{p.duration}</div>
-                      <div className="font-golos text-xs mt-0.5" style={{ color: C.tealLight }}>{p.age}</div>
-                    </div>
+                    <div className="font-golos text-xs uppercase tracking-widest" style={{ color: C.stoneLight }}>{p.duration}</div>
                   </div>
                   <h3 className="font-cormorant text-2xl mb-3" style={{ color: C.stone }}>{p.title}</h3>
                   <p className="font-golos text-sm leading-relaxed" style={{ color: C.stoneMid }}>{p.desc}</p>
@@ -324,7 +319,6 @@ export default function Index() {
                     </div>
                   )}
                   <div className="mb-5">
-                    <div className="font-golos text-xs uppercase tracking-widest mb-1" style={{ color: C.teal }}>{pkg.label}</div>
                     <h3 className="font-cormorant text-2xl mb-1" style={{ color: C.stone }}>{pkg.name}</h3>
                     <div className="font-golos text-sm" style={{ color: C.stoneLight }}>{pkg.duration}</div>
                   </div>
