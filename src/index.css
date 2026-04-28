@@ -4,40 +4,52 @@
 
 @layer base {
   :root {
-    --background: 20 14% 6%;
-    --foreground: 40 30% 92%;
+    --background: 150 30% 97%;
+    --foreground: 200 25% 18%;
 
-    --card: 20 12% 9%;
-    --card-foreground: 40 30% 92%;
+    --card: 0 0% 100%;
+    --card-foreground: 200 25% 18%;
 
-    --popover: 20 12% 9%;
-    --popover-foreground: 40 30% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 25% 18%;
 
-    --primary: 42 60% 68%;
-    --primary-foreground: 20 14% 6%;
+    --primary: 168 40% 38%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 160 20% 22%;
-    --secondary-foreground: 40 30% 92%;
+    --secondary: 200 35% 92%;
+    --secondary-foreground: 200 25% 18%;
 
-    --muted: 20 10% 14%;
-    --muted-foreground: 40 15% 55%;
+    --muted: 150 20% 93%;
+    --muted-foreground: 200 15% 50%;
 
-    --accent: 160 30% 35%;
-    --accent-foreground: 40 30% 92%;
+    --accent: 195 50% 88%;
+    --accent-foreground: 200 25% 18%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 40 30% 92%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 20 10% 16%;
-    --input: 20 10% 16%;
-    --ring: 42 60% 68%;
+    --border: 160 20% 86%;
+    --input: 160 20% 86%;
+    --ring: 168 40% 38%;
 
-    --radius: 0.25rem;
+    --radius: 0.375rem;
 
-    --gold: #c9a96e;
-    --emerald: #2d6a5a;
-    --cream: #ede8df;
-    --dark: #100e0c;
+    --teal: #3a8f7f;
+    --teal-light: #6bb8a8;
+    --sky: #a8d5e2;
+    --sage: #8baf9a;
+    --cream: #f5f2ec;
+    --stone: #2c3e38;
+    --gold: #b89a5e;
+
+    --sidebar-background: 150 30% 97%;
+    --sidebar-foreground: 200 25% 18%;
+    --sidebar-primary: 168 40% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 20% 93%;
+    --sidebar-accent-foreground: 200 25% 18%;
+    --sidebar-border: 160 20% 86%;
+    --sidebar-ring: 168 40% 38%;
   }
 }
 
@@ -54,8 +66,8 @@
     @apply bg-background text-foreground;
     font-family: "Golos Text", sans-serif;
     font-weight: 300;
-    background-color: #100e0c;
-    color: #ede8df;
+    background-color: #f5f2ec;
+    color: #2c3e38;
   }
 
   h1,
@@ -74,66 +86,23 @@
     font-family: "Golos Text", sans-serif;
   }
 
+  .text-teal {
+    color: var(--teal);
+  }
+  .text-stone {
+    color: var(--stone);
+  }
   .text-gold {
     color: var(--gold);
   }
-  .text-cream {
-    color: var(--cream);
+  .bg-cream-section {
+    background-color: var(--cream);
   }
-  .bg-dark {
-    background-color: var(--dark);
+  .bg-teal {
+    background-color: var(--teal);
   }
-  .bg-emerald {
-    background-color: var(--emerald);
-  }
-  .border-gold {
-    border-color: var(--gold);
-  }
-
-  .gradient-gold {
-    background: linear-gradient(135deg, #c9a96e 0%, #e8c98a 50%, #a07848 100%);
-  }
-
-  .gradient-emerald {
-    background: linear-gradient(135deg, #1a4a3e 0%, #2d6a5a 50%, #1a3d34 100%);
-  }
-
-  .gradient-hero {
-    background: linear-gradient(
-      160deg,
-      #100e0c 0%,
-      #1a1612 30%,
-      #1a3d34 60%,
-      #100e0c 100%
-    );
-  }
-
-  .noise-overlay::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-    opacity: 0.03;
-    pointer-events: none;
-    z-index: 1000;
-  }
-
-  .animate-fade-up {
-    animation: fadeUp 0.8s ease forwards;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 1s ease forwards;
-  }
-
-  .line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  .border-teal {
+    border-color: var(--teal);
   }
 }
 
@@ -163,7 +132,7 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
   }
 }
 
@@ -176,6 +145,10 @@
   }
 }
 
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -183,16 +156,16 @@
 .shimmer-text {
   background: linear-gradient(
     90deg,
-    #c9a96e 0%,
-    #f0dba0 40%,
-    #c9a96e 60%,
-    #a07848 100%
+    #2d7265 0%,
+    #6bb8a8 40%,
+    #3a8f7f 60%,
+    #2d7265 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: shimmer 4s linear infinite;
+  animation: shimmer 5s linear infinite;
 }
 
 /* Scrollbar */
@@ -200,12 +173,12 @@
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #100e0c;
+  background: #f5f2ec;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9a96e44;
+  background: #3a8f7f44;
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c9a96e88;
+  background: #3a8f7f88;
 }
