@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMG = "https://cdn.poehali.dev/projects/7a8eee21-12aa-4bc3-8336-361bab780227/files/9e42c9b7-e70f-4034-9703-7ddfd73b133e.jpg";
-const SPA_IMG = "https://cdn.poehali.dev/projects/7a8eee21-12aa-4bc3-8336-361bab780227/files/91a4b364-a6a2-47a4-928a-1b8b34a3dfd9.jpg";
-const ROOM_IMG = "https://cdn.poehali.dev/projects/7a8eee21-12aa-4bc3-8336-361bab780227/files/83245ab6-6135-46a8-924a-228711cb9b86.jpg";
+const HERO_IMG = "https://cdn.poehali.dev/projects/7a8eee21-12aa-4bc3-8336-361bab780227/bucket/71afc66e-b0f9-4629-a838-d12b43027633.jpg";
+const SPA_IMG = "https://cdn.poehali.dev/projects/7a8eee21-12aa-4bc3-8336-361bab780227/bucket/6ad4d16e-9102-4a0b-9fac-dee274fe27e4.jpg";
+const ROOM_IMG = "https://cdn.poehali.dev/projects/7a8eee21-12aa-4bc3-8336-361bab780227/bucket/ba58beee-df37-4c85-93f3-25cadb336bce.jpg";
+const SPA2_IMG = "https://cdn.poehali.dev/projects/7a8eee21-12aa-4bc3-8336-361bab780227/bucket/45d7c892-9841-4384-91c7-3a500499f799.jpeg";
+const CEDAR_IMG = "https://cdn.poehali.dev/projects/7a8eee21-12aa-4bc3-8336-361bab780227/bucket/af6886a1-3a29-412f-bd17-b563445278f1.jpg";
 
 const programs = [
   {
@@ -99,9 +101,11 @@ const reviews = [
 ];
 
 const gallery = [
-  { src: HERO_IMG, caption: "Территория курорта" },
-  { src: SPA_IMG, caption: "СПА-процедуры" },
-  { src: ROOM_IMG, caption: "Номера и виллы" },
+  { src: HERO_IMG, caption: "Черное море · Сириус" },
+  { src: SPA2_IMG, caption: "СПА-ритуалы" },
+  { src: SPA_IMG, caption: "Жемчужные ванны" },
+  { src: ROOM_IMG, caption: "Номера курорта" },
+  { src: CEDAR_IMG, caption: "Кедровая бочка" },
 ];
 
 function useScrollReveal() {
@@ -405,41 +409,44 @@ export default function Index() {
             <div className="font-golos text-xs uppercase tracking-[0.3em] text-gold mb-4">Gallery</div>
             <h2 className="font-cormorant text-5xl md:text-6xl font-light">Галерея</h2>
           </RevealSection>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-            <div
-              className="lg:col-span-2 overflow-hidden cursor-pointer"
-              style={{ border: "1px solid rgba(201,169,110,0.2)", aspectRatio: "16/9" }}
-              onClick={() => setActiveGallery((activeGallery + 1) % gallery.length)}
-            >
-              <img
-                src={gallery[activeGallery].src}
-                alt={gallery[activeGallery].caption}
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-            <div className="flex flex-col gap-4">
-              {gallery.map((g, i) => (
-                <div
-                  key={i}
-                  className="flex-1 overflow-hidden cursor-pointer relative"
-                  style={{ border: i === activeGallery ? "1px solid #C9A96E" : "1px solid rgba(201,169,110,0.15)", minHeight: "100px" }}
-                  onClick={() => setActiveGallery(i)}
-                >
-                  <img src={g.src} alt={g.caption} className="w-full h-full object-cover transition-all duration-500 hover:scale-105" />
-                  {i === activeGallery && (
-                    <div className="absolute inset-0 flex items-end p-3" style={{ background: "linear-gradient(to top, rgba(16,14,12,0.8), transparent)" }}>
-                      <span className="font-golos text-xs uppercase tracking-widest text-gold">{g.caption}</span>
-                    </div>
-                  )}
-                </div>
-              ))}
+          {/* Главное фото */}
+          <div
+            className="w-full overflow-hidden cursor-pointer mb-4 relative group"
+            style={{ border: "1px solid rgba(201,169,110,0.2)", aspectRatio: "21/9" }}
+            onClick={() => setActiveGallery((activeGallery + 1) % gallery.length)}
+          >
+            <img
+              src={gallery[activeGallery].src}
+              alt={gallery[activeGallery].caption}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 flex items-end p-6" style={{ background: "linear-gradient(to top, rgba(16,14,12,0.7) 0%, transparent 50%)" }}>
+              <div className="flex items-center justify-between w-full">
+                <span className="font-cormorant italic text-2xl" style={{ color: "#EDE8DFcc" }}>{gallery[activeGallery].caption}</span>
+                <span className="font-golos text-xs uppercase tracking-widest text-gold opacity-60">{activeGallery + 1} / {gallery.length}</span>
+              </div>
             </div>
           </div>
-          <RevealSection className="text-center mt-8">
-            <div className="font-cormorant italic text-xl" style={{ color: "#EDE8DF60" }}>
-              {gallery[activeGallery].caption}
-            </div>
-          </RevealSection>
+          {/* Сетка миниатюр */}
+          <div className="grid grid-cols-5 gap-3">
+            {gallery.map((g, i) => (
+              <div
+                key={i}
+                className="overflow-hidden cursor-pointer relative"
+                style={{
+                  border: i === activeGallery ? "2px solid #C9A96E" : "1px solid rgba(201,169,110,0.15)",
+                  aspectRatio: "1/1",
+                  transition: "border-color 0.3s",
+                }}
+                onClick={() => setActiveGallery(i)}
+              >
+                <img src={g.src} alt={g.caption} className="w-full h-full object-cover transition-all duration-500 hover:scale-110" />
+                {i !== activeGallery && (
+                  <div className="absolute inset-0" style={{ background: "rgba(16,14,12,0.3)" }} />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
