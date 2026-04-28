@@ -49,6 +49,7 @@ const packages = [
     name: "СПА-перезагрузка: антистресс",
     label: "",
     duration: "3–4 ночи",
+    price: "25 000 ₽",
     features: [
       "Проживание в номере выбранной категории",
       "Завтраки — шведский стол",
@@ -67,6 +68,7 @@ const packages = [
     name: "СПА-перезагрузка: восстановление",
     label: "",
     duration: "7 ночей",
+    price: "55 000 ₽",
     features: [
       "Проживание в номере выбранной категории",
       "Завтраки — шведский стол",
@@ -320,7 +322,8 @@ export default function Index() {
                   )}
                   <div className="mb-5">
                     <h3 className="font-cormorant text-2xl mb-1" style={{ color: C.stone }}>{pkg.name}</h3>
-                    <div className="font-golos text-sm" style={{ color: C.stoneLight }}>{pkg.duration}</div>
+                    <div className="font-golos text-sm mb-2" style={{ color: C.stoneLight }}>{pkg.duration}</div>
+                    <div className="font-cormorant text-3xl font-medium" style={{ color: C.teal }}>{pkg.price}</div>
                   </div>
                   <ul className="flex-1 space-y-2.5 mb-8">
                     {pkg.features.map(f => (
